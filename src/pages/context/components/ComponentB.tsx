@@ -5,6 +5,9 @@ export default function ComponentB() {
     return (
         <div className="p-6 w-128 border-4 border-purple-400 rounded-4xl min-w-max">
             <h1>Mi componente B</h1>
+            {/* <button className="btn btn-secondary" onClick={() => setCounter((prev) => prev + 1)}>
+                Aumentar
+            </button> */}
             <ComponentC />
         </div>
     );

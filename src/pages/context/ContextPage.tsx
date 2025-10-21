@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { createContext, useState } from "react";
 
 import ComponentA from "./components/ComponentA";
+
+export const CounterContext = createContext(null);
 
 export default function ContextPage() {
     console.info("Componente ContextPage renderizandose");
@@ -12,7 +14,9 @@ export default function ContextPage() {
             <button className="btn btn-primary" onClick={() => setCounter((prev) => prev + 1)}>
                 Aumentar
             </button>
-            <ComponentA />
+            <CounterContext.Provider value={{ counter, setCounter }}>
+                <ComponentA />
+            </CounterContext.Provider>
         </div>
     );
 }
